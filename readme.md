@@ -13,6 +13,7 @@ integrated console.log
 dinamic TOC  
 placeholder for codesandbox  
 put a link to the main site in every pattern and packaje.json
+change style
 
 # checklist
 

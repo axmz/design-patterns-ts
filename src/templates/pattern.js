@@ -5,9 +5,10 @@ import Layout from '../components/layout';
 const styles = {
   width: "100%",
   height: "500px",
-  border: "1px solid grey",
+  border: "15px solid",
   borderRadius: "4px",
-  overflow: "hidden"
+  overflow: "hidden",
+  margin: "25px 0"
 };
 
 export default ({ data }) => {

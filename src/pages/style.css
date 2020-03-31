@@ -1,0 +1,38 @@
+body {
+  color: #333333;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: teal;
+}
+
+a:link {
+  color: purple;
+}
+
+a:active,
+a:hover {
+  color: #000;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  text-decoration: none;
+}
+
+.patterns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.list {
+  padding: 1rem;
+  background-color: #ddd;
+  border-radius: 5px;
+}
