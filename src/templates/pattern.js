@@ -1,16 +1,34 @@
 import React from "react";
-import { graphql, withPrefix } from "gatsby";
-import Helmet from "react-helmet"
+import { graphql } from "gatsby";
+import Layout from '../components/layout';
+
+const styles = {
+  width: "100%",
+  height: "500px",
+  border: "0",
+  borderRadius: "4px",
+  overflow: "hidden"
+};
 
 export default ({ data }) => {
-  console.log("data", data);
-  const { html, frontmatter } = data.markdownRemark;
+  const { html, frontmatter: {title}, fields: {slug} } = data.markdownRemark;
 
   return (
-    <div>
-      <Helmet> <script src={withPrefix('index.ts')} type="text/javascript" /> </Helmet>
-      <div dangerouslySetInnerHTML={{ __html: html }}></div>
-    </div>
+    <Layout>
+      <div>
+        <h1>{title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: html }}></div>
+        <div>
+          <iframe
+            src={`https://codesandbox.io/embed/github/axmz/design-patterns-ts/tree/master/patterns${slug}?expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark`}
+            style={styles}
+            title={`${slug}`}
+            allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+            sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+          ></iframe>
+        </div>
+      </div>
+    </Layout>
   );
 };
 
@@ -20,6 +38,9 @@ export const query = graphql`
       html
       frontmatter {
         title
+      }
+      fields {
+        slug
       }
     }
   }
