@@ -1,7 +1,7 @@
 {
   "name": "adapter",
   "version": "1.0.0",
-  "description": "",
+  "description": "Adapter design pattern in typescript",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html",

@@ -10,10 +10,9 @@ integrated console.log
 
 # todo
 
-add text 'open the console to see the results, refresh if not present'  
 dinamic TOC  
 placeholder for codesandbox  
-put a link to the main site in every pattern
+put a link to the main site in every pattern and packaje.json
 
 # checklist
 
@@ -24,4 +23,4 @@ put a link to the main site in every pattern
 <!-- .md renamed -->
 <!-- .html renamed   -->
 <!-- remove what's not necessary from folders   -->
-import to github
+<!-- import to github -->
