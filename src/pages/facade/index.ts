@@ -7,12 +7,8 @@ class WelcomeToBank {
 class AccountNumberCheck {
   private acc: number = 12345678
 
-  private getAcc(): number {
-    return this.acc
-  }
-
   public checkAccount(accToCheck: number): boolean {
-    if(accToCheck === this.getAcc()) {
+    if(accToCheck === this.acc) {
       return true
     } else {
       return false
@@ -23,12 +19,8 @@ class AccountNumberCheck {
 class SecurityCodeCheck {
   private secCode: number = 1234
 
-  private getSecCode(): number {
-    return this.secCode
-  }
-
   public checkCode(secCodeToCheck: number): boolean {
-    if(secCodeToCheck === this.getSecCode()) {
+    if(secCodeToCheck === this.secCode) {
       return true
     } else {
       return false
@@ -39,10 +31,6 @@ class SecurityCodeCheck {
 class FundsCheck {
   private cashInAcc: number = 1000
 
-  getCashInAcc(): number {
-    return this.cashInAcc
-  }
-
   decreaseCashInAcc(amount: number):void {
     this.cashInAcc -= amount
   }
@@ -51,20 +39,19 @@ class FundsCheck {
   }
 
   haveEnoughMoney(amount: number): boolean {
-    if(this.getCashInAcc() >= amount) {
+    if(this.cashInAcc >= amount) {
       this.decreaseCashInAcc(amount)
-      console.log('Withdrawal complete: current balance ', this.getCashInAcc())
+      console.log('Withdrawal complete: current balance ', this.cashInAcc)
       return true
     } else {
-      console.log('Not enough money in the account')
-      console.log('Current balance: ', this.getCashInAcc())
+      console.log('Not enough money in the account: current balance: ', this.cashInAcc)
       return false
     }
   }
 
   makeDeposit(amount: number): void {
     this.increaseCashInAcc(amount)
-    console.log('Deposit complete: current balance ', this.getCashInAcc())
+    console.log('Deposit complete: current balance ', this.cashInAcc)
   }
 }
 
@@ -93,7 +80,7 @@ class BankFacade {
     if(this.access && this.fundsCheck.haveEnoughMoney(amount)) {
       console.log('Operation complete')
     } else {
-      console.log('Operation faild')
+      console.log('Operation failed')
     }
   }
 
@@ -102,13 +89,10 @@ class BankFacade {
       this.fundsCheck.makeDeposit(amount)
       console.log('Operation complete')
     } else {
-      console.log('Operation faild')
+      console.log('Operation failed')
     }
   }
 }
-
-// const bank = new BankFacade(123, 123)
-// bank.depositCash(1000)
 
 const bank = new BankFacade(12345678, 1234)
 bank.depositCash(100)
