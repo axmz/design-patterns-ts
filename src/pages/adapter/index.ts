@@ -5,7 +5,7 @@ interface EnemyAttacker {
 }
 
 class EnemyTank implements EnemyAttacker {
-  random: number = Math.random()
+  random: number = Math.floor(Math.random())+1
 
   fireWeapon(): void {
     console.log(`Attacks -${this.random}`)
@@ -56,12 +56,17 @@ const tank = new EnemyTank()
 const robot = new EnemyRobot()
 const adaptedRobot = new EnemyRobotAdapter(robot)
 
-tank.fireWeapon()
-tank.driveForward()
-tank.assignDriver('Bill')
+console.log("The Robot")
+robot.reactToHuman('Paul')
 robot.smashWithHands()
 robot.walkForward()
-robot.reactToHuman('Bill')
+
+console.log("The Enemy Tank")
+tank.assignDriver('Frank')
+tank.fireWeapon()
+tank.driveForward()
+
+console.log("The Robot with Adapter")
+adaptedRobot.assignDriver('Mark')
 adaptedRobot.fireWeapon()
 adaptedRobot.driveForward()
-adaptedRobot.assignDriver('Bill')

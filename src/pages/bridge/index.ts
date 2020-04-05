@@ -5,6 +5,7 @@ abstract class Device {
 
   public abstract buttonFive(): void
   public abstract buttonSix(): void
+
   public deviceFeedback(): void {
     if (this.deviceState > this.maxSetting || this.deviceState < 0 ) this.deviceState = 0
     console.log('On channel ' + this.deviceState)
@@ -33,7 +34,7 @@ class TVDevice extends Device {
   
   public buttonSix(): void {
     this.deviceState++
-    console.log('Channel up')
+    console.log('Channel up' )
   }
 }
 
@@ -55,31 +56,33 @@ abstract class Remote {
    abstract buttonNine(): void
 }
 
-class RemoteMute extends Remote{
+class RemoteWithMute extends Remote{
 
   buttonNine(): void {
     console.log('Device muted')
   }
 }
 
-class RemotePause extends Remote{
+class RemoteWithPause extends Remote{
   buttonNine(): void {
     console.log('Device paused')
   }
 }
 
-const tv = new TVDevice(100, 100)
-const remoteMute = new RemoteMute(tv)
-const remotePause = new RemotePause(tv)
-tv.buttonSix()
-tv.deviceFeedback()
-tv.buttonSeven()
+const tv1 = new TVDevice(1, 100)
+const tv2 = new TVDevice(1, 100)
+const remoteMute = new RemoteWithMute(tv1)
+const remotePause = new RemoteWithPause(tv2)
 
+console.log('------ remote with mute for tv1');
+remotePause.deviceFeedback()
 remoteMute.buttonNine()
 remoteMute.buttonSix()
 remoteMute.deviceFeedback()
 // remoteMute.buttonSeven()
 
+console.log('------ remote with pause for tv2');
+remotePause.deviceFeedback()
 remotePause.buttonNine()
 remotePause.buttonSix()
 remotePause.deviceFeedback()
