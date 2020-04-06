@@ -28,7 +28,7 @@ export default () => (
             <li><Link to="./bridge">Bridge</Link></li>
             <li><Link to="./composite">Composite</Link></li>
             <li><Link to="./decorator">Decorator</Link></li>
-            {/* <li><Link to="./facade">Facade</Link></li> */}
+            <li><Link to="./facade">Facade</Link></li>
             {/* <li><Link to="./proxy">Proxy</Link></li> */}
           </ul>
         </div>
