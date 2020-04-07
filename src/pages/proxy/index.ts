@@ -1,4 +1,4 @@
-import {ATMState, ATM} from './state'
+import {ATMState, ATM} from '../state'
 
 export interface GetATMData {
   getATMState(): ATMState
