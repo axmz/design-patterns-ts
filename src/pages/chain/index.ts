@@ -5,7 +5,6 @@ interface Chain {
 
 class Numbers {
   constructor(public nr1: number, public nr2: number, public operation: string) {}
-
 }
 
 class AddNumbers implements Chain {
@@ -81,5 +80,5 @@ class DivNumbers implements Chain {
 }
 
 const chain = new AddNumbers(new SubNumbers(new MulNumbers( new DivNumbers()) ))
-const numbers = new Numbers(3,5,'vx')
+const numbers = new Numbers(3,5,'div')
 chain.calculate(numbers)

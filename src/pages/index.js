@@ -12,6 +12,13 @@ export default () => (
       </div>
       <div className='patterns'>
         <div className="list">
+          <h3>Missing</h3>
+          <ul>
+            <li>Abstract</li>
+            <li>Flyweight</li>
+          </ul>
+        </div>
+        <div className="list">
           <h3>Creational patterns</h3>
           <ul>
             <li><Link to="./builder">Builder</Link></li>
@@ -35,13 +42,13 @@ export default () => (
         <div className="list">
           <h3>Behavioral patterns</h3>
           <ul>
-            {/* <li><Link to="./chain">Chain</Link></li> */}
+            <li><Link to="./chain">Chain</Link></li>
             <li> <Link to="./command">Command</Link> </li>
             {/* <li><Link to="./iterator">Iterator</Link></li> */}
             {/* <li><Link to="./mediator">Mediator</Link></li> */}
             {/* <li><Link to="./memento">Memento</Link></li> */}
             <li> <Link to="./observer">Observer</Link> </li>
-            {/* <li><Link to="./state">State</Link></li> */}
+            <li><Link to="./state">State</Link></li>
             {/* <li><Link to="./template">Template</Link></li> */}
             {/* <li><Link to="./test">Test</Link></li> */}
             {/* <li><Link to="./visitor">Visitor</Link></li> */}

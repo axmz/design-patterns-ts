@@ -1,22 +1,22 @@
-import { ATM } from "./atm";
-import { ATMState } from "./states";
+// import { ATM } from "./atm";
+// import { ATMState } from "./states";
 
-export interface GetATMData {
-  getATMState(): ATMState;
-  getCashInATM(): number;
-}
+// export interface GetATMData {
+//   getATMState(): ATMState;
+//   getCashInATM(): number;
+// }
 
-export class ATMProxy implements GetATMData {
-  getATMState(): ATMState {
-    const realATM = new ATM();
-    return realATM.getATMState();
-  }
+// export class ATMProxy implements GetATMData {
+//   getATMState(): ATMState {
+//     const realATM = new ATM();
+//     return realATM.getATMState();
+//   }
 
-  getCashInATM(): number {
-    const realATM = new ATM();
-    return realATM.getCashInATM();
-  }
-}
+//   getCashInATM(): number {
+//     const realATM = new ATM();
+//     return realATM.getCashInATM();
+//   }
+// }
 
 // proxy is used for methods tracing
 // const handler = {

@@ -1,18 +1,27 @@
-import {ATMState, ATM} from '../state'
+import {ATM } from './atm'
+import { ATMProxy, logger } from './proxy';
 
-export interface GetATMData {
-  getATMState(): ATMState
-  getCashInATM(): number
-}
+const atm = new ATM();
 
-export class ATMProxy implements GetATMData {
-  getATMState(): ATMState {
-    const realATM = new ATM()
-    return realATM.getATMState()
-  }  
+// it is a native JS Proxy example - it has nothing to do with proxy design pattern.
+// this proxy handler is used for methods tracing (loggin). 
+console.groupCollapsed('native Proxy example') 
+const p = new Proxy(atm, logger);
+p.insertCard();
+p.insertPIN(1234);
+p.insertPIN(1234);
+p.ejectCard();
+p.insertCard();
+p.insertPIN(1234);
+p.requestCash(1000);
+p.insertCard();
+p.insertPIN(1234);
+p.requestCash(100);
+console.groupEnd();
 
-  getCashInATM(): number {
-    const realATM = new ATM()
-    return realATM.getCashInATM()
-  }
-}
+// here the access to ATM methods is restricted by Proxy design pattern
+console.group('proxy design pattern example') 
+const atmProxy = new ATMProxy(atm)
+const cashInAtm = atmProxy.getCashInATM()
+console.log({ cashInAtm })
+console.groupEnd();

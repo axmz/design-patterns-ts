@@ -1,9 +1,10 @@
 import {ATMState, HasCard, HasPIN, NoCard, NoCash} from './states'
+import { GetATMData } from "./proxy";
 
 ////////////////////////////////////////////////////////////////////////////////
 // ATM class
 ////////////////////////////////////////////////////////////////////////////////
-export class ATM implements ATMState {
+export class ATM implements ATMState, GetATMData {
   private cashInATM = 2000;
   private correctPINEntered = false;
   protected hasCard: ATMState;
@@ -18,6 +19,7 @@ export class ATM implements ATMState {
     this.hasPIN = new HasPIN(this);
     this.noCash = new NoCash(this);
     this.ATMState = this.noCard;
+
     if (this.cashInATM <= 0) {
       this.ATMState = this.noCash;
     }
@@ -28,6 +30,7 @@ export class ATM implements ATMState {
   ////////////////////////////////////////////////////////////
 
   getATMState() {
+    // this method is from GetATMData interface
     return this.ATMState;
   }
 
@@ -40,6 +43,7 @@ export class ATM implements ATMState {
   }
 
   getCashInATM(): number {
+    // this method is from GetATMData interface
     return this.cashInATM;
   }
 
