@@ -1,14 +1,14 @@
-// const arr = [1,2]
-// const iteratorArr = arr[Symbol.iterator]()
-// console.log(iteratorArr.next())
-// console.log(iteratorArr.next())
-// console.log(iteratorArr.next())
-// const obj = {a: 'a', b: 'b', c: 'c'}
-// const iteratorObj = Object.values(obj)[Symbol.iterator]()
-// console.log(iteratorObj.next())
-// console.log(iteratorObj.next())
-// console.log(iteratorObj.next())
-// console.log(iteratorObj.next())
+const arr = [1,2]
+const iteratorArr = arr[Symbol.iterator]()
+console.log(iteratorArr.next())
+console.log(iteratorArr.next())
+console.log(iteratorArr.next())
+const obj = {a: 'a', b: 'b', c: 'c'}
+const iteratorObj = Object.values(obj)[Symbol.iterator]()
+console.log(iteratorObj.next())
+console.log(iteratorObj.next())
+console.log(iteratorObj.next())
+console.log(iteratorObj.next())
 
 interface Song {
   title: string

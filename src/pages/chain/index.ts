@@ -1,84 +1,73 @@
 interface Chain {
-  setNextChain(next: Chain): void
-  calculate(request: Numbers): void
+  calculate(request: Numbers): void;
+}
+
+abstract class AbstractChain implements Chain {
+  constructor(public next?: Chain) {}
+
+  // this will act as default. 
+  // in child classes it is called with super.calculate();
+  calculate(request: Numbers): void {
+    if (!this.next) {
+      console.log("Only add, sub, mul, div allowed");
+    } else {
+      this.next.calculate(request);
+    }
+  }
 }
 
 class Numbers {
   constructor(public nr1: number, public nr2: number, public operation: string) {}
 }
 
-class AddNumbers implements Chain {
-  constructor(public nextInChain: Chain) {}
-
-  setNextChain(next: Chain): void {
-    this.nextInChain = next
-  }  
-
+class AddNumbers extends AbstractChain {
   calculate(request: Numbers): void {
-    const {nr1, nr2, operation} = request
-    if (operation === 'sum') {
-      let res = nr1 + nr2
-      console.log(`${nr1} + ${nr2} = ${res}`)
+    const { nr1, nr2, operation } = request;
+    if (operation === "sum") {
+      let res = nr1 + nr2;
+      console.log(`${nr1} + ${nr2} = ${res}`);
     } else {
-      this.nextInChain.calculate(request)
+      super.calculate(request);
     }
   }
 }
 
-class SubNumbers implements Chain {
-  constructor(public nextInChain: Chain) {}
-
-  setNextChain(next: Chain): void {
-    this.nextInChain = next
-  }  
-
+class SubNumbers extends AbstractChain {
   calculate(request: Numbers): void {
-    const {nr1, nr2, operation} = request
-    if (operation === 'sub') {
-      let res = nr1 - nr2
-      console.log(`${nr1} - ${nr2} = ${res}`)
+    const { nr1, nr2, operation } = request;
+    if (operation === "sub") {
+      let res = nr1 - nr2;
+      console.log(`${nr1} - ${nr2} = ${res}`);
     } else {
-      this.nextInChain.calculate(request)
+      super.calculate(request);
     }
   }
 }
 
-class MulNumbers implements Chain {
-  constructor(public nextInChain: Chain) {}
-
-  setNextChain(next: Chain): void {
-    this.nextInChain = next
-  }  
-
+class MulNumbers extends AbstractChain {
   calculate(request: Numbers): void {
-    const {nr1, nr2, operation} = request
-    if (operation === 'mul') {
-      let res = nr1 * nr2
-      console.log(`${nr1} * ${nr2} = ${res}`)
+    const { nr1, nr2, operation } = request;
+    if (operation === "mul") {
+      let res = nr1 * nr2;
+      console.log(`${nr1} * ${nr2} = ${res}`);
     } else {
-      this.nextInChain.calculate(request)
+      super.calculate(request);
     }
   }
 }
 
-class DivNumbers implements Chain {
-  // constructor(public nextInChain: Chain) {}
-
-  setNextChain(next: Chain): void {
-    // this.nextInChain = next
-  }  
-
+class DivNumbers extends AbstractChain {
   calculate(request: Numbers): void {
-    const {nr1, nr2, operation} = request
-    if (operation === 'div') {
-      let res = nr1 / nr2
-      console.log(`${nr1} / ${nr2} = ${res}`)
+    const { nr1, nr2, operation } = request;
+    if (operation === "div") {
+      let res = nr1 / nr2;
+      console.log(`${nr1} / ${nr2} = ${res}`);
     } else {
-      console.log('Only add, sub, mul, div allowed')
+      super.calculate(request);
     }
   }
 }
 
-const chain = new AddNumbers(new SubNumbers(new MulNumbers( new DivNumbers()) ))
-const numbers = new Numbers(3,5,'div')
-chain.calculate(numbers)
+const chain = new AddNumbers(new SubNumbers(new MulNumbers(new DivNumbers())));
+const numbers = new Numbers(3, 5, "sub");
+chain.calculate(numbers);
