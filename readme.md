@@ -16,6 +16,8 @@ put a link to the main site in every pattern and packaje.json
 change style  
 write brief description with explore  
 console.group when necessary  
+make one more iterator  
+make my own examples  
 
 # checklist
 
