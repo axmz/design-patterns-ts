@@ -28,7 +28,7 @@ abstract class Hoagie {
 }
 
 class ItalianHoagie extends Hoagie {
-  protected addMeat(): void { console.log('Meat added') }
+   addMeat(): void { console.log('Meat added') }
   protected addChease(): void { console.log('Chease added') }
   protected addVegetables(): void { console.log('Vegetables added') }
   protected addCondiments(): void { console.log('Condiments added') }
