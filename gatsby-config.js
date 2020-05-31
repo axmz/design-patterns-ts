@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/design-patterns-ts",
   siteMetadata: {
     title: `Design patterns - Typescript`,
     description: `Design patterns in typescript`,
