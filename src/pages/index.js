@@ -7,17 +7,10 @@ export default () => (
     <div>
       <div>
         <h2>About</h2>
-        <p>Here you can find typescript implementations of common design patterns.</p>
-        <a href="https://www.youtube.com/playlist?list=PLF206E906175C7E07"> Design patterns - Youtube playlist </a>
+        <p>Here you can find TypeScript implementation of common design patterns.</p>
+        <p>These examples were based on <a href="https://www.youtube.com/playlist?list=PLF206E906175C7E07"> Java Design Patterns</a>. Although, TS implementation were intentionally written similar to Java examples, TS allows for much more consise code.</p>
       </div>
       <div className='patterns'>
-        <div className="list">
-          <h3>Missing</h3>
-          <ul>
-            <li>Abstract</li>
-            <li>Flyweight</li>
-          </ul>
-        </div>
         <div className="list">
           <h3>Creational patterns</h3>
           <ul>
@@ -51,6 +44,13 @@ export default () => (
             <li><Link to="./state">State</Link></li>
             <li><Link to="./template">Template</Link></li>
             <li><Link to="./visitor">Visitor</Link></li>
+          </ul>
+        </div>
+        <div className="list">
+          <h3>Coming Soon</h3>
+          <ul>
+            <li>Abstract</li>
+            <li>Flyweight</li>
           </ul>
         </div>
       </div>
