@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-templates-pattern-js","path":"/chain/","result":{"data":{"markdownRemark":{"html":"<p>Note super.calculate() in the implementations of AbstractChain - this is the way to call the default calculate method that sits in AbstractChain itself.</p>","frontmatter":{"title":"Chain"},"fields":{"slug":"/chain/"}}},"pageContext":{"slug":"/chain/"}}}

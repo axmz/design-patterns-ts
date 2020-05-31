@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-templates-pattern-js","path":"/singleton/","result":{"data":{"markdownRemark":{"html":"<div>Thanks to private constructors in Typescript, it is very simple to write a singleton.</div>","frontmatter":{"title":"Singleton"},"fields":{"slug":"/singleton/"}}},"pageContext":{"slug":"/singleton/"}}}
